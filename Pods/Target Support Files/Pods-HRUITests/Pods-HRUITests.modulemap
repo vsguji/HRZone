@@ -1,0 +1,6 @@
+framework module Pods_HRUITests {
+  umbrella header "Pods-HRUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

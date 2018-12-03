@@ -1,0 +1,8 @@
+app_identifier("com.pengsheng.hr") # The bundle identifier of your app
+apple_id("vsguji_2013@sina.com") # Your Apple email address
+
+itc_team_id("105543810") # App Store Connect Team ID
+team_id("9N24P72S89") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

@@ -21,9 +21,24 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
+  - Kingfisher (4.9.0)
   - Localize-Swift (1.7.1)
   - Log (1.0)
   - MJRefresh (3.1.15.7)
+  - Moya (12.0.0-beta.1):
+    - Moya/Core (= 12.0.0-beta.1)
+  - Moya/Core (12.0.0-beta.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Result (4.0.0)
+  - Reusable (4.0.3):
+    - Reusable/Storyboard (= 4.0.3)
+    - Reusable/View (= 4.0.3)
+  - Reusable/Storyboard (4.0.3)
+  - Reusable/View (4.0.3)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -34,9 +49,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
   - FontAwesomeKit (~> 2.2.1)
+  - Kingfisher (~> 4.9.0)
   - Localize-Swift (~> 1.5)
   - Log (~> 1.0)
   - MJRefresh (~> 3.1.12)
+  - Moya (~> 12.0.0-beta.1)
+  - Reusable (~> 4.0.3)
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
   - SDWebImage (~> 4.0.0-beta2)
   - SnapKit (~> 4.0.0)
   - Starscream (from `https://github.com/daltoniam/Starscream.git`, branch `swift3`)
@@ -46,9 +66,15 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - FontAwesomeKit
+    - Kingfisher
     - Localize-Swift
     - Log
     - MJRefresh
+    - Moya
+    - Result
+    - Reusable
+    - RxCocoa
+    - RxSwift
     - SDWebImage
     - SnapKit
     - SVProgressHUD
@@ -66,14 +92,20 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  Moya: 1b8d16b4dac4302c323ca95077a733836e73484a
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Starscream: d662732354b40dd19ed1ece3e3c44c80b536b83c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: cc9d92d1ea4f6ec958bb88e75ff070da3f93da49
+PODFILE CHECKSUM: 072da570909307fa0a4eed6e8e5bb17066efe8b8
 
 COCOAPODS: 1.5.3

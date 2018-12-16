@@ -14,8 +14,8 @@ target 'HR' do
    #上拉下拉刷新
    pod 'MJRefresh', '~> 3.1.12'
    #加载网络图片
-   pod 'SDWebImage', '~> 4.0.0-beta2'   
-
+   pod 'SDWebImage', '~> 4.0.0-beta2'
+   
    # websocket库
    pod 'Starscream',:git => 'https://github.com/daltoniam/Starscream.git',:branch => 'swift3'
    #日志输出管理
@@ -40,6 +40,18 @@ target 'HR' do
            end
        end
    end
+   
+   pod 'RxSwift',    '~> 4.0'
+   pod 'RxCocoa',    '~> 4.0'
+   # 为RxSwift专用提供，对Alamofire进行封装的一个网络请求库
+   pod 'Moya', '~> 12.0.0-beta.1'
+   # 图片加载库
+   pod 'Kingfisher', '~> 4.9.0'
+   # 帮助我们优雅的使用自定义cell和view,不再出现Optional
+   pod 'Reusable', '~> 4.0.3'
+   # 上拉加载、下拉刷新的库
+   # pod 'MJRefresh', '~> 3.1.15.7'
+   
    
   target 'HRTests' do
     inherit! :search_paths

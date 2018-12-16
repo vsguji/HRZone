@@ -49,6 +49,7 @@
 		CBA91BC19264CAE4FA31C533 /* Pods-HR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HR.release.xcconfig"; path = "Pods/Target Support Files/Pods-HR/Pods-HR.release.xcconfig"; sourceTree = "<group>"; };
 		CE03C1161BBCDF96FD766626 /* Pods-HRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRTests/Pods-HRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E82350B59251A0A0C3B365AC /* Pods-HR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HR/Pods-HR.debug.xcconfig"; sourceTree = "<group>"; };
+		E841F34721BF993000849FDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E843AB7D21B4FAAE00581767 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 		E843AB8021B501A100581767 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		E843AB8321B50C5800581767 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -107,6 +108,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E841F34321BF980F00849FDD /* 推送通知 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "推送通知";
+			sourceTree = "<group>";
+		};
+		E841F34421BF982E00849FDD /* 基础知识 */ = {
+			isa = PBXGroup;
+			children = (
+				E843AB8221B50C4900581767 /* 扩展 */,
+				E843AB7F21B5017800581767 /* 类型转换 */,
+				E843AB7C21B4FA7400581767 /* 继承 */,
+			);
+			path = "基础知识";
+			sourceTree = "<group>";
+		};
+		E841F34521BF984000849FDD /* 知识进阶 */ = {
+			isa = PBXGroup;
+			children = (
+				E841F34321BF980F00849FDD /* 推送通知 */,
+				E841F34721BF993000849FDD /* README.md */,
+			);
+			path = "知识进阶";
+			sourceTree = "<group>";
+		};
+		E841F34621BF989100849FDD /* 实战经验 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "实战经验";
+			sourceTree = "<group>";
+		};
 		E843AB7C21B4FA7400581767 /* 继承 */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +190,9 @@
 		E847617721AFFDD80055E10C /* HR */ = {
 			isa = PBXGroup;
 			children = (
-				E843AB8221B50C4900581767 /* 扩展 */,
-				E843AB7F21B5017800581767 /* 类型转换 */,
-				E843AB7C21B4FA7400581767 /* 继承 */,
+				E841F34421BF982E00849FDD /* 基础知识 */,
+				E841F34521BF984000849FDD /* 知识进阶 */,
+				E841F34621BF989100849FDD /* 实战经验 */,
 				E847617821AFFDD80055E10C /* AppDelegate.swift */,
 				E847617A21AFFDD80055E10C /* ViewController.swift */,
 				E847617C21AFFDD80055E10C /* Main.storyboard */,
@@ -341,9 +375,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HR/Pods-HR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Log/Log.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -353,9 +393,15 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Log.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -645,7 +691,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.pengsheng.hr";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.pengsheng.hr";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

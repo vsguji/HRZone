@@ -10,6 +10,18 @@
 		3D6AD69156F699F287A5BDF0 /* Pods_HRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FA672914EB1F1EB67061A8 /* Pods_HRTests.framework */; };
 		580DDD95011251E12CB244B2 /* Pods_HRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744EFC7C3761FE80B47E1ECD /* Pods_HRUITests.framework */; };
 		915F66C50271D25FA6FF709C /* Pods_HR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57FB44C4596299E105700CB /* Pods_HR.framework */; };
+		E8410B2621C65F9B00849FDD /* HRServerPushManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410B2521C65F9B00849FDD /* HRServerPushManage.swift */; };
+		E8410B6C21CD251B00849FDD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8410B6B21CD251B00849FDD /* UserNotifications.framework */; };
+		E8410B6F21CD4C7200849FDD /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8410B6E21CD4C7100849FDD /* UserNotificationsUI.framework */; };
+		E8410B7121CD4DF300849FDD /* HRServerPushModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410B7021CD4DF300849FDD /* HRServerPushModels.swift */; };
+		E8410B7321CD4EB900849FDD /* HRServerPushActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410B7221CD4EB900849FDD /* HRServerPushActions.swift */; };
+		E8410B7C21CD4F5B00849FDD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = E8410B7B21CD4F5B00849FDD /* NotificationService.m */; };
+		E8410B8021CD4F5B00849FDD /* HRPushServer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8410B7821CD4F5B00849FDD /* HRPushServer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E8410B8A21CD4F9000849FDD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8410B6B21CD251B00849FDD /* UserNotifications.framework */; };
+		E8410B8B21CD4F9000849FDD /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8410B6E21CD4C7100849FDD /* UserNotificationsUI.framework */; };
+		E8410B8F21CD4F9000849FDD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8410B8E21CD4F9000849FDD /* NotificationViewController.m */; };
+		E8410B9221CD4F9000849FDD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8410B9021CD4F9000849FDD /* MainInterface.storyboard */; };
+		E8410B9621CD4F9000849FDD /* HRPushContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8410B8921CD4F9000849FDD /* HRPushContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E843AB7E21B4FAAE00581767 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB7D21B4FAAE00581767 /* StudentDetail.swift */; };
 		E843AB8121B501A100581767 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB8021B501A100581767 /* Subjects.swift */; };
 		E843AB8421B50C5800581767 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB8321B50C5800581767 /* Extension.swift */; };
@@ -24,6 +36,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E8410B7E21CD4F5B00849FDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E847616D21AFFDD80055E10C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8410B7721CD4F5B00849FDD;
+			remoteInfo = HRPushServer;
+		};
+		E8410B9421CD4F9000849FDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E847616D21AFFDD80055E10C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8410B8821CD4F9000849FDD;
+			remoteInfo = HRPushContent;
+		};
 		E847618D21AFFDDC0055E10C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E847616D21AFFDD80055E10C /* Project object */;
@@ -40,6 +66,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E8410B8421CD4F5B00849FDD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E8410B9621CD4F9000849FDD /* HRPushContent.appex in Embed App Extensions */,
+				E8410B8021CD4F5B00849FDD /* HRPushServer.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D98DAF08ECB923BCE7D5536 /* Pods-HRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRUITests/Pods-HRUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34C6B66B9820CE09A55BD3CC /* Pods-HRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRTests/Pods-HRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +90,22 @@
 		CBA91BC19264CAE4FA31C533 /* Pods-HR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HR.release.xcconfig"; path = "Pods/Target Support Files/Pods-HR/Pods-HR.release.xcconfig"; sourceTree = "<group>"; };
 		CE03C1161BBCDF96FD766626 /* Pods-HRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRTests/Pods-HRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E82350B59251A0A0C3B365AC /* Pods-HR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HR/Pods-HR.debug.xcconfig"; sourceTree = "<group>"; };
+		E8410B2521C65F9B00849FDD /* HRServerPushManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRServerPushManage.swift; sourceTree = "<group>"; };
+		E8410B6A21CD17E900849FDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E8410B6B21CD251B00849FDD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		E8410B6D21CD2CF100849FDD /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		E8410B6E21CD4C7100849FDD /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		E8410B7021CD4DF300849FDD /* HRServerPushModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRServerPushModels.swift; sourceTree = "<group>"; };
+		E8410B7221CD4EB900849FDD /* HRServerPushActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRServerPushActions.swift; sourceTree = "<group>"; };
+		E8410B7821CD4F5B00849FDD /* HRPushServer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HRPushServer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8410B7A21CD4F5B00849FDD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		E8410B7B21CD4F5B00849FDD /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		E8410B7D21CD4F5B00849FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8410B8921CD4F9000849FDD /* HRPushContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HRPushContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8410B8D21CD4F9000849FDD /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		E8410B8E21CD4F9000849FDD /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		E8410B9121CD4F9000849FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E8410B9321CD4F9000849FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E841F34721BF993000849FDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E843AB7D21B4FAAE00581767 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 		E843AB8021B501A100581767 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
@@ -71,10 +128,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E8410B7521CD4F5B00849FDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8410B8621CD4F9000849FDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8410B8B21CD4F9000849FDD /* UserNotificationsUI.framework in Frameworks */,
+				E8410B8A21CD4F9000849FDD /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E847617221AFFDD80055E10C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8410B6F21CD4C7200849FDD /* UserNotificationsUI.framework in Frameworks */,
+				E8410B6C21CD251B00849FDD /* UserNotifications.framework in Frameworks */,
 				915F66C50271D25FA6FF709C /* Pods_HR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +176,8 @@
 		3576977FDEA9470CCA1B91B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8410B6E21CD4C7100849FDD /* UserNotificationsUI.framework */,
+				E8410B6B21CD251B00849FDD /* UserNotifications.framework */,
 				F57FB44C4596299E105700CB /* Pods_HR.framework */,
 				B2FA672914EB1F1EB67061A8 /* Pods_HRTests.framework */,
 				744EFC7C3761FE80B47E1ECD /* Pods_HRUITests.framework */,
@@ -108,9 +185,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8410B7921CD4F5B00849FDD /* HRPushServer */ = {
+			isa = PBXGroup;
+			children = (
+				E8410B7A21CD4F5B00849FDD /* NotificationService.h */,
+				E8410B7B21CD4F5B00849FDD /* NotificationService.m */,
+				E8410B7D21CD4F5B00849FDD /* Info.plist */,
+			);
+			path = HRPushServer;
+			sourceTree = "<group>";
+		};
+		E8410B8C21CD4F9000849FDD /* HRPushContent */ = {
+			isa = PBXGroup;
+			children = (
+				E8410B8D21CD4F9000849FDD /* NotificationViewController.h */,
+				E8410B8E21CD4F9000849FDD /* NotificationViewController.m */,
+				E8410B9021CD4F9000849FDD /* MainInterface.storyboard */,
+				E8410B9321CD4F9000849FDD /* Info.plist */,
+			);
+			path = HRPushContent;
+			sourceTree = "<group>";
+		};
 		E841F34321BF980F00849FDD /* 推送通知 */ = {
 			isa = PBXGroup;
 			children = (
+				E8410B2521C65F9B00849FDD /* HRServerPushManage.swift */,
+				E8410B7021CD4DF300849FDD /* HRServerPushModels.swift */,
+				E8410B7221CD4EB900849FDD /* HRServerPushActions.swift */,
 			);
 			path = "推送通知";
 			sourceTree = "<group>";
@@ -121,6 +222,7 @@
 				E843AB8221B50C4900581767 /* 扩展 */,
 				E843AB7F21B5017800581767 /* 类型转换 */,
 				E843AB7C21B4FA7400581767 /* 继承 */,
+				E8410B6A21CD17E900849FDD /* README.md */,
 			);
 			path = "基础知识";
 			sourceTree = "<group>";
@@ -137,6 +239,7 @@
 		E841F34621BF989100849FDD /* 实战经验 */ = {
 			isa = PBXGroup;
 			children = (
+				E8410B6D21CD2CF100849FDD /* Config.h */,
 			);
 			path = "实战经验";
 			sourceTree = "<group>";
@@ -171,6 +274,8 @@
 				E847617721AFFDD80055E10C /* HR */,
 				E847618F21AFFDDC0055E10C /* HRTests */,
 				E847619A21AFFDDC0055E10C /* HRUITests */,
+				E8410B7921CD4F5B00849FDD /* HRPushServer */,
+				E8410B8C21CD4F9000849FDD /* HRPushContent */,
 				E847617621AFFDD80055E10C /* Products */,
 				FE0CD2652E6A63E45ED22085 /* Pods */,
 				3576977FDEA9470CCA1B91B1 /* Frameworks */,
@@ -183,6 +288,8 @@
 				E847617521AFFDD80055E10C /* HR.app */,
 				E847618C21AFFDDC0055E10C /* HRTests.xctest */,
 				E847619721AFFDDC0055E10C /* HRUITests.xctest */,
+				E8410B7821CD4F5B00849FDD /* HRPushServer.appex */,
+				E8410B8921CD4F9000849FDD /* HRPushContent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +345,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E8410B7721CD4F5B00849FDD /* HRPushServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8410B8121CD4F5B00849FDD /* Build configuration list for PBXNativeTarget "HRPushServer" */;
+			buildPhases = (
+				E8410B7421CD4F5B00849FDD /* Sources */,
+				E8410B7521CD4F5B00849FDD /* Frameworks */,
+				E8410B7621CD4F5B00849FDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HRPushServer;
+			productName = HRPushServer;
+			productReference = E8410B7821CD4F5B00849FDD /* HRPushServer.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E8410B8821CD4F9000849FDD /* HRPushContent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8410B9721CD4F9000849FDD /* Build configuration list for PBXNativeTarget "HRPushContent" */;
+			buildPhases = (
+				E8410B8521CD4F9000849FDD /* Sources */,
+				E8410B8621CD4F9000849FDD /* Frameworks */,
+				E8410B8721CD4F9000849FDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HRPushContent;
+			productName = HRPushContent;
+			productReference = E8410B8921CD4F9000849FDD /* HRPushContent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E847617421AFFDD80055E10C /* HR */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E84761A021AFFDDC0055E10C /* Build configuration list for PBXNativeTarget "HR" */;
@@ -247,10 +388,13 @@
 				E847617221AFFDD80055E10C /* Frameworks */,
 				E847617321AFFDD80055E10C /* Resources */,
 				8B24E5A1FB6926ABA5C938E1 /* [CP] Embed Pods Frameworks */,
+				E8410B8421CD4F5B00849FDD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E8410B7F21CD4F5B00849FDD /* PBXTargetDependency */,
+				E8410B9521CD4F9000849FDD /* PBXTargetDependency */,
 			);
 			name = HR;
 			productName = HR;
@@ -305,6 +449,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = lipeng;
 				TargetAttributes = {
+					E8410B7721CD4F5B00849FDD = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E8410B8821CD4F9000849FDD = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					E847617421AFFDD80055E10C = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -334,11 +484,28 @@
 				E847617421AFFDD80055E10C /* HR */,
 				E847618B21AFFDDC0055E10C /* HRTests */,
 				E847619621AFFDDC0055E10C /* HRUITests */,
+				E8410B7721CD4F5B00849FDD /* HRPushServer */,
+				E8410B8821CD4F9000849FDD /* HRPushContent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E8410B7621CD4F5B00849FDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8410B8721CD4F9000849FDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8410B9221CD4F9000849FDD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E847617321AFFDD80055E10C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,13 +636,32 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E8410B7421CD4F5B00849FDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8410B7C21CD4F5B00849FDD /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8410B8521CD4F9000849FDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8410B8F21CD4F9000849FDD /* NotificationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E847617121AFFDD80055E10C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E843AB8121B501A100581767 /* Subjects.swift in Sources */,
 				E843AB7E21B4FAAE00581767 /* StudentDetail.swift in Sources */,
+				E8410B2621C65F9B00849FDD /* HRServerPushManage.swift in Sources */,
 				E847617B21AFFDD80055E10C /* ViewController.swift in Sources */,
+				E8410B7321CD4EB900849FDD /* HRServerPushActions.swift in Sources */,
+				E8410B7121CD4DF300849FDD /* HRServerPushModels.swift in Sources */,
 				E843AB8421B50C5800581767 /* Extension.swift in Sources */,
 				E847618121AFFDD80055E10C /* HR.xcdatamodeld in Sources */,
 				E847617921AFFDD80055E10C /* AppDelegate.swift in Sources */,
@@ -501,6 +687,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E8410B7F21CD4F5B00849FDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8410B7721CD4F5B00849FDD /* HRPushServer */;
+			targetProxy = E8410B7E21CD4F5B00849FDD /* PBXContainerItemProxy */;
+		};
+		E8410B9521CD4F9000849FDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8410B8821CD4F9000849FDD /* HRPushContent */;
+			targetProxy = E8410B9421CD4F9000849FDD /* PBXContainerItemProxy */;
+		};
 		E847618E21AFFDDC0055E10C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E847617421AFFDD80055E10C /* HR */;
@@ -514,6 +710,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E8410B9021CD4F9000849FDD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8410B9121CD4F9000849FDD /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		E847617C21AFFDD80055E10C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -533,6 +737,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E8410B8221CD4F5B00849FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: peng li (D7G64FY57X)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9N24P72S89;
+				INFOPLIST_FILE = HRPushServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8410B8321CD4F5B00849FDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: peng li (9N24P72S89)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9N24P72S89;
+				INFOPLIST_FILE = HRPushServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8410B9821CD4F9000849FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: peng li (D7G64FY57X)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9N24P72S89;
+				INFOPLIST_FILE = HRPushContent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8410B9921CD4F9000849FDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: peng li (9N24P72S89)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9N24P72S89;
+				INFOPLIST_FILE = HRPushContent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E847619E21AFFDDC0055E10C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -786,6 +1066,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E8410B8121CD4F5B00849FDD /* Build configuration list for PBXNativeTarget "HRPushServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8410B8221CD4F5B00849FDD /* Debug */,
+				E8410B8321CD4F5B00849FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8410B9721CD4F9000849FDD /* Build configuration list for PBXNativeTarget "HRPushContent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8410B9821CD4F9000849FDD /* Debug */,
+				E8410B9921CD4F9000849FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E847617021AFFDD80055E10C /* Build configuration list for PBXProject "HR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

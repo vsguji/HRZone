@@ -197,5 +197,12 @@ class ViewController: UIViewController {
 //        扩展可以向已有的类、结构体和枚举添加新的嵌套类型：
         result(numb:[0, 1, 2, 3, 4, 7])
     }
+    
+    
+    
+    // APNS
+    func apnsPush() {
+       // let push = ServerPush();
+    }
 }
 

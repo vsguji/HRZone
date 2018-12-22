@@ -103,8 +103,8 @@ import Log
     }
     
     public func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error){
-        NSLog("msg : %@", error.localizedDescription)
-        
+        log?.error("获取deviceToken失败:"+error.localizedDescription)
+        UIApplication.shared.unregisterForRemoteNotifications()
     }
     
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]")

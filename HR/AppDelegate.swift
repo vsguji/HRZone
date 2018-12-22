@@ -78,26 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     @available(iOS 7.0, *)
     public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-        HRServerPush.share().application(application, didReceiveRemoteNotification: userInfo) { (BackRsp:UIBackgroundFetchResult) in
-            switch (BackRsp){
-            case .newData:
-                break
-            default:
-                break
-            }
+        HRServerPush.share().application(application, didReceiveRemoteNotification: userInfo) { (result) in
+           completionHandler(result)
         }
     }
     
-    
     @available(iOS 7.0, *)
     public func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-        HRServerPush.share().application(application) { (BackRsp:UIBackgroundFetchResult) in
-            switch (BackRsp){
-            case .newData:
-                break
-            default:
-                break
-            }
+        HRServerPush.share().application(application) { (result) in
+            completionHandler(result)
         }
     }
     
@@ -106,14 +95,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
         HRServerPush.share().userNotificationCenter(center, willPresent: notification) { (options:UNNotificationPresentationOptions) in
-            
+            completionHandler(options)
         }
     }
     
     @available(iOS 10.0, *)
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void){
         HRServerPush.share().userNotificationCenter(center, didReceive: response) {
-            
+          completionHandler()
         }
     }
     

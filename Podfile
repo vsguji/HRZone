@@ -17,7 +17,7 @@ target 'HR' do
    pod 'SDWebImage', '~> 4.0.0-beta2'
    
    # websocket库
-   pod 'Starscream',:git => 'https://github.com/daltoniam/Starscream.git',:branch => 'swift3'
+   # pod 'Starscream',:git => 'https://github.com/daltoniam/Starscream.git',:branch => 'swift3'
    #日志输出管理
    pod 'Log','~> 1.0'
    # Swfit项目语言本地化支持框架：https://github.com/marmelroy/Localize-Swift

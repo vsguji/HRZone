@@ -107,6 +107,7 @@
 		E8410B9121CD4F9000849FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E8410B9321CD4F9000849FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E841F34721BF993000849FDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E8424B8721CE290B0022FF07 /* HR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HR.entitlements; sourceTree = "<group>"; };
 		E843AB7D21B4FAAE00581767 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 		E843AB8021B501A100581767 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		E843AB8321B50C5800581767 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -206,6 +207,13 @@
 			path = HRPushContent;
 			sourceTree = "<group>";
 		};
+		E8410B9A21CD50C500849FDD /* FileManage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FileManage;
+			sourceTree = "<group>";
+		};
 		E841F34321BF980F00849FDD /* 推送通知 */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +247,7 @@
 		E841F34621BF989100849FDD /* 实战经验 */ = {
 			isa = PBXGroup;
 			children = (
+				E8410B9A21CD50C500849FDD /* FileManage */,
 				E8410B6D21CD2CF100849FDD /* Config.h */,
 			);
 			path = "实战经验";
@@ -297,6 +306,7 @@
 		E847617721AFFDD80055E10C /* HR */ = {
 			isa = PBXGroup;
 			children = (
+				E8424B8721CE290B0022FF07 /* HR.entitlements */,
 				E841F34421BF982E00849FDD /* 基础知识 */,
 				E841F34521BF984000849FDD /* 知识进阶 */,
 				E841F34621BF989100849FDD /* 实战经验 */,
@@ -457,6 +467,14 @@
 					};
 					E847617421AFFDD80055E10C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E847618B21AFFDDC0055E10C = {
 						CreatedOnToolsVersion = 10.1;
@@ -549,12 +567,12 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -567,12 +585,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -740,10 +758,11 @@
 		E8410B8221CD4F5B00849FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng li (D7G64FY57X)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				INFOPLIST_FILE = HRPushServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,6 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -759,10 +779,11 @@
 		E8410B8321CD4F5B00849FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: peng li (9N24P72S89)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				INFOPLIST_FILE = HRPushServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -770,6 +791,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,10 +800,11 @@
 		E8410B9821CD4F9000849FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng li (D7G64FY57X)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				INFOPLIST_FILE = HRPushContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,6 +812,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -797,10 +821,11 @@
 		E8410B9921CD4F9000849FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: peng li (9N24P72S89)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				INFOPLIST_FILE = HRPushContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -808,6 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr.HRPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -934,9 +960,10 @@
 			baseConfigurationReference = E82350B59251A0A0C3B365AC /* Pods-HR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng li (D7G64FY57X)";
+				CODE_SIGN_ENTITLEMENTS = HR/HR.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HR/Info.plist;
@@ -947,7 +974,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.pengsheng.hr";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -958,9 +986,10 @@
 			baseConfigurationReference = CBA91BC19264CAE4FA31C533 /* Pods-HR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: peng li (9N24P72S89)";
+				CODE_SIGN_ENTITLEMENTS = HR/HR.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N24P72S89;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HR/Info.plist;
@@ -971,7 +1000,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengsheng.hr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.pengsheng.hr";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

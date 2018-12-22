@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "RxAtomic.h"
 
-FOUNDATION_EXPORT double StarscreamVersionNumber;
-FOUNDATION_EXPORT const unsigned char StarscreamVersionString[];
+FOUNDATION_EXPORT double RxAtomicVersionNumber;
+FOUNDATION_EXPORT const unsigned char RxAtomicVersionString[];
 

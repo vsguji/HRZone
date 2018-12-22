@@ -50,6 +50,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
             // Fallback on earlier versions
         }
     }
+    
+    // mark - UIApplicationDelegate
+    
+    public func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
+       HRServerPush.share().application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    public func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error){
+       HRServerPush.share().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]")
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        HRServerPush.share().application(application, didRegister: notificationSettings)
+    }
+    
+    @available(iOS, introduced: 3.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:] for user visible notifications and -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] for silent remote notifications")
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        HRServerPush.share().application(application, didReceiveRemoteNotification: userInfo)
+    }
+    
+    @available(iOS, introduced: 4.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        HRServerPush.share().application(application, didReceive: notification)
+    }
+    
+    @available(iOS 7.0, *)
+    public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+        HRServerPush.share().application(application, didReceiveRemoteNotification: userInfo) { (BackRsp:UIBackgroundFetchResult) in
+            switch (BackRsp){
+            case .newData:
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    
+    @available(iOS 7.0, *)
+    public func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+        HRServerPush.share().application(application) { (BackRsp:UIBackgroundFetchResult) in
+            switch (BackRsp){
+            case .newData:
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    // mark - UNUserNotificationCenterDelegate
+    
+    @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        HRServerPush.share().userNotificationCenter(center, willPresent: notification) { (options:UNNotificationPresentationOptions) in
+            
+        }
+    }
+    
+    @available(iOS 10.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void){
+        HRServerPush.share().userNotificationCenter(center, didReceive: response) {
+            
+        }
+    }
+    
+    @available(iOS 12.0, *)
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?){
+        HRServerPush.share().userNotificationCenter(center, openSettingsFor: notification)
+    }
+    
 
     // MARK: - Core Data stack
     @available(iOS 10.0, *)

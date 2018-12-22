@@ -9,13 +9,24 @@
 import Foundation
 import UIKit
 import UserNotifications
+import Log
 
 // 注册通知管理
 @objc class HRServerPush:NSObject,UIApplicationDelegate,UNUserNotificationCenterDelegate {
     
+    static let shareManager = HRServerPush()
+    
+    fileprivate var log:Logger?
+    
+    public static func share() -> HRServerPush{
+        return shareManager
+    }
+    private override init(){
+        log = Logger(formatter: .minimal, theme:Themes.default , minLevel: .debug)
+    }
+    
     // 当前应用
     public static var currentApplication:NSObject!
-    
     // 显示通知 还是 静默接受通知
     public var notifiVisitOrSilent :Bool = true
     
@@ -23,46 +34,25 @@ import UserNotifications
     @available(iOS 10.0,*)
     fileprivate static var optionals:UNAuthorizationOptions = [.alert,.badge,.sound]
     
+    // 为关键警报播放声音的授权状态。
     @available(iOS 12.0, *)
     public static  var needCriticalAlert:Bool {
-//        var newValue:Bool
-//        set(value){
-//            newValue = value
-//        }
-//        get{
-//            return newValue
-//        }
-//        optionals.insert(<#T##newMember: UNAuthorizationOptions##UNAuthorizationOptions#>)
+       optionals.insert(.criticalAlert)
         return true
     }
+    
+    // 应用程序暂时被授权发布不中断的用户通知。
     @available(iOS 12.0, *)
     public static var needProvisional:Bool {
-        //        var newValue:Bool
-        //        set(value){
-        //            newValue = value
-        //        }
-        //        get{
-        //            return newValue
-        //        }
-//        optionals.insert(.provisional)
+        optionals.insert(.provisional)
         return true
     }
     
+    // 指示系统的布尔值显示一个用于应用程序内通知设置的按钮。
     @available(iOS 12.0, *)
     public static var needProvidesAppNotificationSettings:Bool {
-        //        var newValue:Bool
-        //        set(value){
-        //            newValue = value
-        //        }
-        //        get{
-        //            return newValue
-        //        }
-//        optionals.insert(<#T##newMember: UNAuthorizationOptions##UNAuthorizationOptions#>)
+        optionals.insert(.providesAppNotificationSettings)
         return true
-    }
-    
-    private override init(){
-        
     }
     
     // 注册推送通知
@@ -70,32 +60,35 @@ import UserNotifications
         // 10.0 以上:权限不可访问,调转到设置
         // 8.0 ~ 10.0: 是否已注册监听 : YES 无需执行 ; NO 注册监听
         // 8.0 以下 : 是否已注册监听 : YES 无需执行 ; NO 注册监听
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:self.optionals) { (ok, msg) in
-                if !ok {
-                    guard let authMsg : Error = msg else {
-                         return
+        if !UIApplication.shared.isRegisteredForRemoteNotifications {
+            if #available(iOS 10.0, *) {
+                UNUserNotificationCenter.current().requestAuthorization(options:self.optionals) { (ok, msg) in
+                    if !ok {
+                        guard let authMsg : Error = msg else {
+                            return
+                        }
+                        NSLog("error msg : %@", authMsg.localizedDescription)
+                        // 调转到设置
+                        let settingURL = URL(string: UIApplication.openSettingsURLString)!
+                        UIApplication.shared.openURL(settingURL)
                     }
-                    NSLog("error msg : %@", authMsg.localizedDescription)
-                    // 调转到设置
-                    let settingURL = URL(string: UIApplication.openSettingsURLString)!
-                    UIApplication.shared.openURL(settingURL)
-                }
-                else{
-                    UNUserNotificationCenter.current().delegate = currentApplication as! AppDelegate
+                    else{
+                        UNUserNotificationCenter.current().delegate = currentApplication as! AppDelegate
+                        DispatchQueue.main.async(execute: {
+                           UIApplication.shared.registerForRemoteNotifications()
+                        })
+                    }
                 }
             }
-        }
-        else if #available(iOS 8.0, *){
-            if !UIApplication.shared.isRegisteredForRemoteNotifications {
+            else if #available(iOS 8.0, *){
                 let setting = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
                 UIApplication.shared.registerUserNotificationSettings(setting)
-                UIApplication.shared.registerForRemoteNotifications()
+                DispatchQueue.main.async(execute: {
+                    UIApplication.shared.registerForRemoteNotifications()
+                })
             }
-        }
-        else{
-            if !UIApplication.shared.isRegisteredForRemoteNotifications {
-               UIApplication.shared.registerForRemoteNotifications(matching: [.alert,.badge,.sound])
+            else{
+                UIApplication.shared.registerForRemoteNotifications(matching: [.alert,.badge,.sound])
             }
         }
     }
@@ -103,27 +96,29 @@ import UserNotifications
     // mark - UIApplicationDelegate
     
     public func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
-        let deviceTokenStr = deviceToken.description.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").replacingOccurrences(of: " ", with:"")
+        let data = NSData(data: deviceToken)
+        let token:String = data.description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "")
         // 目标服务器
-        print(deviceTokenStr)
+        log?.debug(token + " ",separator:" ", terminator: "=======")
     }
     
     public func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error){
         NSLog("msg : %@", error.localizedDescription)
+        
     }
     
     @available(iOS, introduced: 8.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]")
-    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+    public func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
         
     }
     
     @available(iOS, introduced: 3.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:] for user visible notifications and -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] for silent remote notifications")
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+   public func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
        
     }
     
     @available(iOS, introduced: 4.0, deprecated: 10.0, message: "Use UserNotifications Framework's -[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]")
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+   public func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         
     }
     

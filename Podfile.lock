@@ -25,25 +25,26 @@ PODS:
   - Localize-Swift (1.7.1)
   - Log (1.0)
   - MJRefresh (3.1.15.7)
-  - Moya (12.0.0-beta.1):
-    - Moya/Core (= 12.0.0-beta.1)
-  - Moya/Core (12.0.0-beta.1):
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
   - Result (4.0.0)
-  - Reusable (4.0.3):
-    - Reusable/Storyboard (= 4.0.3)
-    - Reusable/View (= 4.0.3)
-  - Reusable/Storyboard (4.0.3)
-  - Reusable/View (4.0.3)
-  - RxCocoa (4.2.0):
+  - Reusable (4.0.5):
+    - Reusable/Storyboard (= 4.0.5)
+    - Reusable/View (= 4.0.5)
+  - Reusable/Storyboard (4.0.5)
+  - Reusable/View (4.0.5)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
-  - SnapKit (4.0.0)
-  - Starscream (1.1.3)
+  - SnapKit (4.0.1)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
@@ -59,7 +60,6 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SDWebImage (~> 4.0.0-beta2)
   - SnapKit (~> 4.0.0)
-  - Starscream (from `https://github.com/daltoniam/Starscream.git`, branch `swift3`)
   - SVProgressHUD (~> 2.1.2)
 
 SPEC REPOS:
@@ -73,21 +73,12 @@ SPEC REPOS:
     - Moya
     - Result
     - Reusable
+    - RxAtomic
     - RxCocoa
     - RxSwift
     - SDWebImage
     - SnapKit
     - SVProgressHUD
-
-EXTERNAL SOURCES:
-  Starscream:
-    :branch: swift3
-    :git: https://github.com/daltoniam/Starscream.git
-
-CHECKOUT OPTIONS:
-  Starscream:
-    :commit: b1472f2a99a747ffda35c43ac4eb58b73c59722a
-    :git: https://github.com/daltoniam/Starscream.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -96,16 +87,16 @@ SPEC CHECKSUMS:
   Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  Moya: 1b8d16b4dac4302c323ca95077a733836e73484a
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
-  Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  Starscream: d662732354b40dd19ed1ece3e3c44c80b536b83c
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 072da570909307fa0a4eed6e8e5bb17066efe8b8
+PODFILE CHECKSUM: b0c259755a9b4f4a3a568f9392747acbae77edde
 
 COCOAPODS: 1.5.3

@@ -22,6 +22,7 @@
 		E8410B8F21CD4F9000849FDD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8410B8E21CD4F9000849FDD /* NotificationViewController.m */; };
 		E8410B9221CD4F9000849FDD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8410B9021CD4F9000849FDD /* MainInterface.storyboard */; };
 		E8410B9621CD4F9000849FDD /* HRPushContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8410B8921CD4F9000849FDD /* HRPushContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E8424B8A21CE97670022FF07 /* HRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8424B8921CE97670022FF07 /* HRMainViewController.swift */; };
 		E843AB7E21B4FAAE00581767 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB7D21B4FAAE00581767 /* StudentDetail.swift */; };
 		E843AB8121B501A100581767 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB8021B501A100581767 /* Subjects.swift */; };
 		E843AB8421B50C5800581767 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843AB8321B50C5800581767 /* Extension.swift */; };
@@ -108,6 +109,7 @@
 		E8410B9321CD4F9000849FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E841F34721BF993000849FDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8424B8721CE290B0022FF07 /* HR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HR.entitlements; sourceTree = "<group>"; };
+		E8424B8921CE97670022FF07 /* HRMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMainViewController.swift; sourceTree = "<group>"; };
 		E843AB7D21B4FAAE00581767 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 		E843AB8021B501A100581767 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		E843AB8321B50C5800581767 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -247,10 +249,19 @@
 		E841F34621BF989100849FDD /* 实战经验 */ = {
 			isa = PBXGroup;
 			children = (
+				E8424B8821CE973A0022FF07 /* TabbarViewController */,
 				E8410B9A21CD50C500849FDD /* FileManage */,
 				E8410B6D21CD2CF100849FDD /* Config.h */,
 			);
 			path = "实战经验";
+			sourceTree = "<group>";
+		};
+		E8424B8821CE973A0022FF07 /* TabbarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E8424B8921CE97670022FF07 /* HRMainViewController.swift */,
+			);
+			path = TabbarViewController;
 			sourceTree = "<group>";
 		};
 		E843AB7C21B4FA7400581767 /* 继承 */ = {
@@ -679,6 +690,7 @@
 				E8410B2621C65F9B00849FDD /* HRServerPushManage.swift in Sources */,
 				E847617B21AFFDD80055E10C /* ViewController.swift in Sources */,
 				E8410B7321CD4EB900849FDD /* HRServerPushActions.swift in Sources */,
+				E8424B8A21CE97670022FF07 /* HRMainViewController.swift in Sources */,
 				E8410B7121CD4DF300849FDD /* HRServerPushModels.swift in Sources */,
 				E843AB8421B50C5800581767 /* Extension.swift in Sources */,
 				E847618121AFFDD80055E10C /* HR.xcdatamodeld in Sources */,
